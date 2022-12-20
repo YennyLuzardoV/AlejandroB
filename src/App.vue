@@ -1,32 +1,69 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+  <v-app>
+    <v-app-bar    
+      color="#E0E0E0"
+      flat
+      height="170px"
+      tile
+      class="menubar"
+    >    
+    <v-container>
+        <v-row class="">
+          <v-col class="d-flex justify-center"> 
+            <v-img
+            alt="Logo"
+            class="shrink mr-2"
+            contain
+            src="./assets/Logoink.png"
+            transition="scale-transition"
+            width="80"></v-img>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-app-bar>
+
+    <v-toolbar 
+    color="black"
+    dark>
+      <v-row>
+        <v-col>
+          <v-tabs
+            background-color="black"
+            dark
+            class="d-flex justify-center"
+          >
+            <v-tab router-link to="/">Inicio</v-tab>
+            <v-tab router-link to="/biografia">Biografia</v-tab>
+            <v-tab router-link to="/exhibicion">Exhibicion</v-tab>
+            <v-tab router-link to="/contacto">Contacto</v-tab>
+          </v-tabs>
+        </v-col>
+      </v-row>
+    </v-toolbar>
     <router-view/>
-  </div>
+  </v-app>
 </template>
 
+<script>
+
+
+export default {
+  name: 'App',
+  
+  data: () => ({
+    //
+  }),
+components:{
+}
+
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .menubar{
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    padding-right: 0;
+  }
+  
 </style>
